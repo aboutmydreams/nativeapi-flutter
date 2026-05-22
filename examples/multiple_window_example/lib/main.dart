@@ -1,7 +1,7 @@
 // ignore_for_file: invalid_use_of_internal_member, implementation_imports
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/_window.dart';
+import 'package:flutter/src/widgets/_window.dart' hide WindowManager;
 import 'package:nativeapi/nativeapi.dart';
 
 void main() {
@@ -27,7 +27,7 @@ void main() {
     return true;
   });
   WindowManager.instance.setWillHideHook((windowId) {
-    print('[Dart] will hide hook $windowId');
+    debugPrint('[Dart] will hide hook $windowId');
     return true;
   });
   runWidget(
